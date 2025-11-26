@@ -1,0 +1,198 @@
+/* Sıfırlama */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* SAHNE AYARLARI */
+body {
+    background: radial-gradient(circle at center, #2e0707 0%, #0d1117 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* --- YENİ EKLENEN KISIM (Font Ayarı) --- */
+    font-family: 'Orbitron', sans-serif; /* Tüm yazılar fütüristik olsun */
+    color: #ffffff; /* Yazı rengi beyaz olsun ki koyu zeminde okunsun */
+}
+
+/* ANA KUTU (CONTAINER) */
+.container {
+    width: 90%;
+    max-width: 900px;
+    height: 600px;
+    box-sizing: border-box;
+    background-color: rgba(5, 2, 2, 0.6); 
+    box-shadow: 0 0 30px rgba(157, 17, 17, 0.8);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* rgba(255, 255, 255, 0.15); */
+    /* İçindeki yazıları ortalamak için */
+    display: flex;
+    flex-direction: column; /* Alt alta dizilsinler */
+    justify-content: flex-start; /* Dikeyde ortala */
+    padding-top: 100px;
+    align-items: center;     /* Yatayda ortala */
+}
+
+
+/* --- 3. ADIM: LOGO VE BAŞLIK AYARLARI --- */
+
+/* LOGO GENEL (CARDIA kısmı) */
+h1 {
+    font-size: 5rem; /* Yazıyı devasa yap */
+    margin: 0;       /* Varsayılan boşlukları sıfırla */
+    letter-spacing: 10px; /* Harfler arasını aç (daha sinematik durur) */
+    
+    /* Neon Parlama Efekti */
+    text-shadow: 0 0 20px rgba(255, 50, 0, 0.3); 
+    
+    /* Mobilde taşmasın diye önlem */
+    line-height: 1;
+}
+
+/* SADECE 'X' HARFİ AYARLARI */
+h1 span {
+    color: #ff3300; /* X harfi açık mavi (Cyan) olsun */
+    text-shadow: 0 0 25px rgba(255, 50, 0, 0.8);
+
+    letter-spacing: normal; 
+    margin-right: 0px; 
+    display: inline-block;
+
+    /* X ve C arasındaki o büyük boşluğu kapatma hilesi */
+    /* letter-spacing: normal;  */
+    /* margin-right: -10px; C harfine doğru iyice yapıştır */
+    
+    /* display: inline-block; Margin ayarının çalışması için şart */
+}
+
+/* ALT METİN (SLOGAN) */
+.subtitle {
+    font-family: 'Roboto', sans-serif; /* Daha okunaklı, düz font */
+    font-size: 1.2rem;
+    color: #a0aab5; /* Hafif gri, göz yormayan renk */
+    margin-top: 15px; /* Logodan biraz uzaklaşsın */
+    letter-spacing: 3px; /* Harfleri yayarak havalı göster */
+    font-weight: 300; /* İnce font */
+}
+
+/* RESPONSIVE (Telefondan girenler için küçültme) */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; } /* Mobilde fontu yarıya düşür */
+    .subtitle { font-size: 0.9rem; }
+}
+
+/* --- 4. ADIM: YÜKLEME ÇUBUĞU STİLLERİ --- */
+
+/* Çubuğun Dış Çerçevesi */
+.progress-wrapper {
+    width: 80%; /* Kutunun %80 genişliği kadar olsun */
+    max-width: 700px; /* Çok devasa ekranlarda abartı uzamasın */
+    height: 30px; /* Çubuğun kalınlığı */
+    background-color: rgba(0,0,0,0.6); /* İçi koyu yarı saydam */
+    
+    /* Logodaki kırmızıya uyumlu ince çerçeve */
+    border: 2px solid rgba(255, 50, 0, 0.2); 
+    border-radius: 15px; /* Yuvarlak köşeler */
+    padding: 4px; /* İçindeki bar ile çerçeve arası boşluk */
+    
+    margin-top: 60px; /* Yukarıdaki slogandan uzaklaşma mesafesi */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* İçe doğru derinlik gölgesi */
+}
+
+/* Çubuğun İçindeki Dolan Kısım (Ateş Efekti) */
+.progress-bar {
+    height: 100%; /* Çerçevenin boyunu doldur */
+    
+    /* Kırmızıdan Turuncuya ateş degrade rengi */
+    background: linear-gradient(90deg, #ff3300, #ff8c00);
+    
+    border-radius: 10px;
+    
+    /* Ateş gibi parlasın */
+    box-shadow: 0 0 25px rgba(255, 60, 0, 0.8);
+    
+    /* Genişlik değişirken yumuşak geçiş yapsın */
+    transition: width 0.5s ease;
+}
+
+/* Altındaki Yüzde Yazısı */
+.status-text {
+    font-family: 'Roboto', monospace; /* Kod gibi görünen font */
+    color: #ff3300; /* Kırmızı renk */
+    margin-top: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+
+/* --- 5. ADIM: SOSYAL MEDYA İKONLARI STİLLERİ --- */
+
+/* İkonları kapsayan kutu */
+.social-icons {
+    display: flex;           /* Yan yana diz */
+    justify-content: center; /* Ortala */
+    gap: 25px;               /* İkonlar arası boşluk */
+    margin-top: 40px;        /* Yükleme çubuğundan uzaklaş */
+}
+
+/* Butonların Varsayılan (Sönük) Hali */
+.social-btn {
+    /* İkon rengi (Sloganla uyumlu gri) */
+    color: #a0aab5;
+    font-size: 1.5rem; /* İkon boyutu */
+    
+    /* Dairesel şekil ve arka plan */
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05); /* Çok hafif şeffaf beyaz */
+    border-radius: 50%; /* Tam daire yap */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Sönük ince çerçeve */
+    
+    /* İçerik ortalama */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Link alt çizgisini kaldır */
+    
+    /* Yumuşak geçiş efekti */
+    transition: all 0.3s ease;
+}
+
+/* --- ÜZERİNE GELİNCE (HOVER) ATEŞLENME EFEKTİ --- */
+.social-btn:hover {
+    /* İkon rengini kırmızı yap */
+    color: #ff3300;
+    
+    /* Arka planı hafif kırmızımsı yap */
+    background: rgba(255, 50, 0, 0.15);
+    
+    /* Çerçeveyi kırmızı yap */
+    border-color: #ff3300;
+    
+    /* Hafif yukarı zıplat */
+    transform: translateY(-5px);
+    
+    /* ATEŞ GİBİ PARLAMA GÖLGESİ */
+    box-shadow: 0 0 25px rgba(255, 60, 0, 0.6);
+}
+
+
+/* --- 6. ADIM: FOOTER (İMZA) STİLLERİ --- */
+footer {
+    position: absolute; /* Sayfanın konumundan bağımsız hareket et */
+    bottom: 15px;       /* En alttan 15 piksel yukarıda dur */
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;  /* Küçük ve zarif olsun */
+    color: #6c757d;     /* Sönük gri renk (Dikkati dağıtmasın) */
+    
+    width: 100%;        /* Ekranı kapla ki... */
+    text-align: center; /* ...yazı tam ortada durabilsin */
+    
+    opacity: 0.6;       /* Hafif şeffaf yapalım */
+    letter-spacing: 1px;
+}
